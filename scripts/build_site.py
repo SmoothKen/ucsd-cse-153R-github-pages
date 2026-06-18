@@ -1,0 +1,297 @@
+from pathlib import Path
+import html
+import json
+
+root = Path(__file__).resolve().parents[1]
+data = json.loads((root / "data" / "course.json").read_text())
+site = data["site"]
+
+pages = [
+    ("index.html", "Home"),
+    ("syllabus.html", "Syllabus"),
+    ("assignments.html", "Assignments"),
+    ("resources.html", "Resources"),
+]
+
+def esc(x):
+    return html.escape(str(x), quote=True)
+
+def link(label, url, cls=""):
+    c = f' class="{esc(cls)}"' if cls else ""
+    return f'<a{c} href="{esc(url)}" target="_blank" rel="noopener">{esc(label)}</a>'
+
+def nav(active):
+    items = []
+    for href, label in pages:
+        cls = ' class="active" aria-current="page"' if label == active else ""
+        items.append(f'<a{cls} href="{href}">{label}</a>')
+    return "\n".join(items)
+
+def shell(title, active, body):
+    return f'''<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{esc(title)} | {esc(site["short_title"])}</title>
+    <meta name="description" content="{esc(site["description"])}">
+    <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="assets/css/site.css">
+</head>
+<body>
+    <a class="skip" href="#main">Skip to main content</a>
+    <header class="site-header">
+        <div class="container header-grid">
+            <a class="brand" href="index.html">
+                <span class="brand-mark">190</span>
+                <span>
+                    <strong>{esc(site["short_title"])}</strong>
+                    <small>{esc(site["term"])}</small>
+                </span>
+            </a>
+            <nav class="nav" aria-label="Primary navigation">
+                {nav(active)}
+            </nav>
+        </div>
+    </header>
+    <main id="main" class="container page">
+        {body}
+    </main>
+    <footer class="site-footer">
+        <div class="container footer-grid">
+            <p>Static GitHub Pages mirror of the course Google Site. Public course links remain external.</p>
+            <p>Extracted {esc(site["last_extracted"])} · <a href="{esc(site["original_site"])}" target="_blank" rel="noopener">Original Google Site</a></p>
+        </div>
+    </footer>
+    <script src="assets/js/site.js"></script>
+</body>
+</html>
+'''
+
+def home_page():
+    people = "\n".join(
+        f'''<article class="card">
+            <p class="eyebrow">{esc(p["role"])}</p>
+            <h3>{esc(p["name"])}</h3>
+            <p><a href="mailto:{esc(p["email"])}">{esc(p["email"])}</a></p>
+            <p>{esc(p["office_hours"])}</p>
+            <p>{link("Zoom link", p["office_hours_url"], "button")}</p>
+        </article>'''
+        for p in data["people"]
+    )
+    course_links = "\n".join(
+        f'<li><strong>{link(x["label"], x["url"])}</strong><span>{esc(x.get("note", ""))}</span></li>'
+        for x in data["course_links"]
+    )
+    notes = "\n".join(f'<li>{esc(x)}</li>' for x in data["home_notes"])
+    body = f'''
+        <section class="hero">
+            <p class="eyebrow">{esc(site["term"])}</p>
+            <h1>{esc(site["title"])}</h1>
+            <p class="lede">A static, version-controlled course site for public course information, assignments, resources, and lecture links.</p>
+            <div class="hero-actions">
+                <a class="button" href="assignments.html">View assignments</a>
+                <a class="button secondary" href="syllabus.html">View syllabus</a>
+            </div>
+        </section>
+
+        <section aria-labelledby="people">
+            <div class="section-heading">
+                <p class="eyebrow">Contacts</p>
+                <h2 id="people">Course staff</h2>
+            </div>
+            <div class="card-grid two">{people}</div>
+        </section>
+
+        <section aria-labelledby="course-links">
+            <div class="section-heading">
+                <p class="eyebrow">Course systems</p>
+                <h2 id="course-links">Useful links</h2>
+            </div>
+            <ul class="link-list">{course_links}</ul>
+        </section>
+
+        <section class="callout" aria-labelledby="course-notes">
+            <h2 id="course-notes">Course notes</h2>
+            <ul>{notes}</ul>
+        </section>
+    '''
+    return shell("Home", "Home", body)
+
+def syllabus_page():
+    notes = "\n".join(f'<li>{esc(x)}</li>' for x in data["syllabus"]["recording_notes"])
+    week_html = []
+    for week in data["weeks"]:
+        classes = []
+        for c in week["classes"]:
+            slide_html = ""
+            if c.get("slides"):
+                slide_html = '<p class="resource-line">' + " · ".join(link(s["label"], s["url"], "pill") for s in c["slides"]) + '</p>'
+            items = []
+            for item in c.get("items", []):
+                label = link(item["label"], item["url"]) if item.get("url") else esc(item["label"])
+                note = f' <span class="muted">({esc(item["note"])})</span>' if item.get("note") else ""
+                items.append(f'<li>{label}{note}</li>')
+            classes.append(f'''<article class="class-card searchable">
+                <h3>{esc(c["title"])}</h3>
+                {slide_html}
+                <ul>{"".join(items)}</ul>
+            </article>''')
+        week_html.append(f'''<section class="week" aria-labelledby="{esc(week["week"].lower().replace(" ", "-"))}">
+            <h2 id="{esc(week["week"].lower().replace(" ", "-"))}">{esc(week["week"])}</h2>
+            <div class="class-grid">{"".join(classes)}</div>
+        </section>''')
+    body = f'''
+        <section class="page-title">
+            <p class="eyebrow">Syllabus</p>
+            <h1>Schedule and lecture materials</h1>
+            <p class="lede">Lecture recordings, slide links, prerequisites, and course description.</p>
+        </section>
+
+        <section class="callout">
+            <h2>Recording notes</h2>
+            <ul>{notes}</ul>
+        </section>
+
+        <section class="card-grid two">
+            <article class="card">
+                <p class="eyebrow">Prerequisite</p>
+                <p>{esc(data["syllabus"]["prerequisite"])}</p>
+            </article>
+            <article class="card">
+                <p class="eyebrow">Enrollment</p>
+                <p>{esc(data["syllabus"]["enrollment"])}</p>
+            </article>
+        </section>
+
+        <section>
+            <h2>Description</h2>
+            <p>{esc(data["syllabus"]["description"])}</p>
+        </section>
+
+        <section class="toolbar" aria-label="Schedule search">
+            <label for="schedule-search">Filter schedule</label>
+            <input id="schedule-search" type="search" placeholder="Search videos, topics, weeks, or classes">
+        </section>
+
+        {"".join(week_html)}
+    '''
+    return shell("Syllabus", "Syllabus", body)
+
+def assignment_rows(items, include_dates=True):
+    rows = []
+    for a in items:
+        title = link(a["title"], a["url"]) if a.get("url") else esc(a["title"])
+        topic = f'<span class="muted">{esc(a["topic"])}</span><br>' if a.get("topic") else ""
+        if a.get("options"):
+            opts = " · ".join(link(o["label"], o["url"]) for o in a["options"])
+            title = f'{esc(a["title"])}<br><span class="subtle">{opts}</span>'
+        date_cols = f'<td>{esc(a.get("due", "8/1"))}</td><td>{esc(a.get("self_grade_due", "8/4"))}</td>' if include_dates else ""
+        rows.append(f'<tr><td>{esc(a["number"])}</td><td>{topic}{title}</td>{date_cols}</tr>')
+    return "\n".join(rows)
+
+def assignments_page():
+    assn = data["assignments"]
+    required = assignment_rows(assn["required"])
+    optional = assignment_rows([{**a, "due": assn["optional_due"], "self_grade_due": assn["optional_self_grade_due"]} for a in assn["optional"]])
+    milestones = "\n".join(f'<li><strong>{esc(m["label"])}</strong> ({esc(m["weight"])}) due {esc(m["due"])}</li>' for m in assn["project"]["milestones"])
+    self_grading = "\n".join(f'<li>{esc(x)}</li>' for x in assn["self_grading"]["instructions"])
+    body = f'''
+        <section class="page-title">
+            <p class="eyebrow">Assignments</p>
+            <h1>Homework and final project</h1>
+            <p class="lede">Programming assignments, optional assignment track, final project track, and self-grading instructions.</p>
+        </section>
+
+        <section class="callout">
+            <h2>Homework assignments</h2>
+            <p>{esc(assn["required_intro"])}</p>
+            <p>{esc(assn["due_note"])}</p>
+        </section>
+
+        <section>
+            <h2>Required assignments</h2>
+            <div class="table-wrap">
+                <table>
+                    <thead><tr><th>#</th><th>Assignment</th><th>Due</th><th>Self-grades due</th></tr></thead>
+                    <tbody>{required}</tbody>
+                </table>
+            </div>
+            <p>{esc(assn["required_grade_note"])}</p>
+        </section>
+
+        <section>
+            <h2>Remaining 40%: choose assignments or project</h2>
+            <p>{esc(assn["choice_intro"])}</p>
+            <article class="card">
+                <h3>Option 1: Assignments</h3>
+                <p>Choose 4 of these 5 assignments. Each assignment is worth 10% of the grade. Due {esc(assn["optional_due"])}, with self-grading due {esc(assn["optional_self_grade_due"])}.</p>
+                <div class="table-wrap">
+                    <table>
+                        <thead><tr><th>#</th><th>Assignment</th><th>Due</th><th>Self-grades due</th></tr></thead>
+                        <tbody>{optional}</tbody>
+                    </table>
+                </div>
+            </article>
+            <article class="card">
+                <h3>Option 2: {link(assn["project"]["title"], assn["project"]["url"])}</h3>
+                <ul>{milestones}</ul>
+                <p>To get an idea of projects done in previous quarters, see {link("this folder", assn["project"]["previous_projects_url"])}.</p>
+            </article>
+        </section>
+
+        <section class="callout">
+            <h2>Self-grading instructions</h2>
+            <p>The point of homework in this class is to learn the material. Students must evaluate their own homework in addition to TA grading. Self-grading is mandatory to receive credit for an assignment.</p>
+            <p>{link("Self-Grading Form", assn["self_grading"]["form_url"], "button")}</p>
+            <ol>{self_grading}</ol>
+            <p>If you have any questions, please ask on Piazza.</p>
+        </section>
+    '''
+    return shell("Assignments", "Assignments", body)
+
+def resources_page():
+    resources = "\n".join(
+        f'<li><strong>{link(x["label"], x["url"])}</strong><span>{esc(x.get("note", ""))}</span></li>'
+        for x in data["resources"]
+    )
+    fun = "\n".join(f'<li>{link(x["label"], x["url"])}</li>' for x in data["fun_resources"])
+    body = f'''
+        <section class="page-title">
+            <p class="eyebrow">Resources</p>
+            <h1>Readings, videos, and external references</h1>
+        </section>
+        <section>
+            <h2>Course resources</h2>
+            <ul class="link-list">{resources}</ul>
+        </section>
+        <section>
+            <h2>Other fun stuff</h2>
+            <ul class="link-list compact">{fun}</ul>
+        </section>
+    '''
+    return shell("Resources", "Resources", body)
+
+def not_found_page():
+    body = '''
+        <section class="page-title">
+            <p class="eyebrow">404</p>
+            <h1>Page not found</h1>
+            <p class="lede">The page may have moved. Use the navigation above or return to the home page.</p>
+            <p><a class="button" href="index.html">Go home</a></p>
+        </section>
+    '''
+    return shell("Page not found", "", body)
+
+outputs = {
+    "index.html": home_page(),
+    "syllabus.html": syllabus_page(),
+    "assignments.html": assignments_page(),
+    "resources.html": resources_page(),
+    "404.html": not_found_page(),
+}
+
+for name, text in outputs.items():
+    (root / name).write_text(text)
+
+print("Built", ", ".join(outputs))

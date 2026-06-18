@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" role="img" aria-label="CSE 190">
+    <rect width="128" height="128" rx="30" fill="#1d4f91"/>
+    <circle cx="94" cy="36" r="20" fill="#c69214" opacity=".95"/>
+    <text x="64" y="78" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="42" font-weight="800" fill="white">190</text>
+</svg>
