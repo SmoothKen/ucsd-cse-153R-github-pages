@@ -1,9 +1,14 @@
 from pathlib import Path
+import csv
 import html
-import json
+import sys
 
 root = Path(__file__).resolve().parents[1]
-data = json.loads((root / "data" / "course.json").read_text())
+sys.path.insert(0, str(root))
+
+import course_config as cfg
+
+data = cfg.course_data
 site = data["site"]
 
 pages = [
@@ -43,7 +48,7 @@ def shell(title, active, body):
     <header class="site-header">
         <div class="container header-grid">
             <a class="brand" href="index.html">
-                <span class="brand-mark">190</span>
+                <span class="brand-mark">{esc(cfg.course)}</span>
                 <span>
                     <strong>{esc(site["short_title"])}</strong>
                     <small>{esc(site["term"])}</small>
@@ -137,8 +142,9 @@ def syllabus_page():
                 {slide_html}
                 <ul>{"".join(items)}</ul>
             </article>''')
-        week_html.append(f'''<section class="week" aria-labelledby="{esc(week["week"].lower().replace(" ", "-"))}">
-            <h2 id="{esc(week["week"].lower().replace(" ", "-"))}">{esc(week["week"])}</h2>
+        week_id = esc(week["week"].lower().replace(" ", "-"))
+        week_html.append(f'''<section class="week" aria-labelledby="{week_id}">
+            <h2 id="{week_id}">{esc(week["week"])}</h2>
             <div class="class-grid">{"".join(classes)}</div>
         </section>''')
     body = f'''
@@ -283,6 +289,27 @@ def not_found_page():
     '''
     return shell("Page not found", "", body)
 
+def write_link_csv():
+    rows = []
+
+    def walk(obj, path=""):
+        if isinstance(obj, dict):
+            if "url" in obj:
+                rows.append([path.strip("/"), obj.get("label") or obj.get("title") or obj.get("name") or "", obj["url"], obj.get("note", "")])
+            for k, v in obj.items():
+                walk(v, f"{path}/{k}")
+        elif isinstance(obj, list):
+            for i, v in enumerate(obj):
+                walk(v, f"{path}/{i}")
+
+    walk(data)
+    data_dir = root / "data"
+    data_dir.mkdir(exist_ok=True)
+    with (data_dir / "all_links.csv").open("w", newline="", encoding="utf-8") as f:
+        w = csv.writer(f)
+        w.writerow(["source_path", "label", "url", "note"])
+        w.writerows(rows)
+
 outputs = {
     "index.html": home_page(),
     "syllabus.html": syllabus_page(),
@@ -292,6 +319,7 @@ outputs = {
 }
 
 for name, text in outputs.items():
-    (root / name).write_text(text)
+    (root / name).write_text(text, encoding="utf-8")
 
+write_link_csv()
 print("Built", ", ".join(outputs))

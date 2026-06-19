@@ -1,0 +1,81 @@
+{% extends "base.html" %}
+{% from "macros.html" import ext_link %}
+{% macro assignment_row(a, fallback_due='', fallback_self_grade_due='') -%}
+<tr>
+    <td>{{ a.number }}</td>
+    <td>
+        {%- if a.topic is defined and a.topic %}<span class="muted">{{ a.topic }}</span><br>{% endif -%}
+        {%- if a.options is defined and a.options -%}
+            {{ a.title }}<br><span class="subtle">{% for option in a.options %}{{ ext_link(option.label, option.url) }}{% if not loop.last %} · {% endif %}{% endfor %}</span>
+        {%- elif a.url is defined and a.url -%}
+            {{ ext_link(a.title, a.url) }}
+        {%- else -%}
+            {{ a.title }}
+        {%- endif -%}
+    </td>
+    <td>{{ a.due|default(fallback_due, true) }}</td>
+    <td>{{ a.self_grade_due|default(fallback_self_grade_due, true) }}</td>
+</tr>
+{%- endmacro %}
+{% block content %}
+        <section class="page-title">
+            <p class="eyebrow">Assignments</p>
+            <h1>Homework and final project</h1>
+            <p class="lede">Programming assignments, optional assignment track, final project track, and self-grading instructions.</p>
+        </section>
+
+        <section class="callout">
+            <h2>Homework assignments</h2>
+            <p>{{ assignments.required_intro }}</p>
+            <p>{{ assignments.due_note }}</p>
+        </section>
+
+        <section>
+            <h2>Required assignments</h2>
+            <div class="table-wrap">
+                <table>
+                    <thead><tr><th>#</th><th>Assignment</th><th>Due</th><th>Self-grades due</th></tr></thead>
+                    <tbody>
+                        {% for assignment in assignments.required %}{{ assignment_row(assignment) }}{% endfor %}
+                    </tbody>
+                </table>
+            </div>
+            <p>{{ assignments.required_grade_note }}</p>
+        </section>
+
+        <section>
+            <h2>Remaining 40%: choose assignments or project</h2>
+            <p>{{ assignments.choice_intro }}</p>
+            <article class="card">
+                <h3>Option 1: Assignments</h3>
+                <p>Choose 4 of these 5 assignments. Each assignment is worth 10% of the grade. Due {{ assignments.optional_due }}, with self-grading due {{ assignments.optional_self_grade_due }}.</p>
+                <div class="table-wrap">
+                    <table>
+                        <thead><tr><th>#</th><th>Assignment</th><th>Due</th><th>Self-grades due</th></tr></thead>
+                        <tbody>
+                            {% for assignment in assignments.optional %}{{ assignment_row(assignment, assignments.optional_due, assignments.optional_self_grade_due) }}{% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </article>
+            <article class="card">
+                <h3>Option 2: {{ ext_link(assignments.project.title, assignments.project.url) }}</h3>
+                <ul>
+                    {% for milestone in assignments.project.milestones %}
+                    <li><strong>{{ milestone.label }}</strong> ({{ milestone.weight }}) due {{ milestone.due }}</li>
+                    {% endfor %}
+                </ul>
+                <p>To get an idea of projects done in previous quarters, see {{ ext_link("this folder", assignments.project.previous_projects_url) }}.</p>
+            </article>
+        </section>
+
+        <section class="callout">
+            <h2>Self-grading instructions</h2>
+            <p>{{ assignments.self_grading.summary }}</p>
+            <p>{{ ext_link("Self-Grading Form", assignments.self_grading.form_url, "button") }}</p>
+            <ol>
+                {% for item in assignments.self_grading.instructions %}<li>{{ item }}</li>{% endfor %}
+            </ol>
+            <p>{{ assignments.self_grading.question_note }}</p>
+        </section>
+{% endblock %}
