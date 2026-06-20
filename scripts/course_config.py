@@ -1,7 +1,7 @@
 # Edit this file, then run:
 #     scripts/build_site.py
-#     update_github_repo.sh
-#     scripts/enable_github_pages.sh git@github.com:SmoothKen/ucsd-cse-153R-github-pages master /
+#     update_github_repo.sh or manually add/commit/push
+#     (one time) scripts/enable_github_pages.sh git@github.com:SmoothKen/ucsd-cse-153R-github-pages master /
 # GitHub Pages serves static HTML. This Python file is build-time config;
 # it is not executed by GitHub Pages in the browser/server.
 

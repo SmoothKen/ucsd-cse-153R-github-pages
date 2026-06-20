@@ -164,7 +164,7 @@ def syllabus_page():
             <p>{esc(data["syllabus"]["description"])}</p>
         </section>
 
-        <section>
+        <section class="callout">
             <h2>Recording notes</h2>
             <ul>{notes}</ul>
         </section>
