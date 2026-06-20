@@ -24,6 +24,7 @@ Examples:
 course = '153R'
 term = 'Summer 2026'
 professor = "Shlomo Dubnov"
+ta = "Keren Shao"
 required_assignments[0]["due"] = "7/5"
 optional_due = "8/1"
 ```
