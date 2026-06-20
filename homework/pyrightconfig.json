@@ -1,0 +1,30 @@
+{
+    "venvPath": ".",
+    "venv": ".venv",
+
+    "exclude": [
+        "**"
+    ],
+    "typeCheckingMode": "off",
+    "useLibraryCodeForTypes": false,
+    "extraPaths": [
+        "/home/ken/.vscode/.special_paths"
+    ],
+
+    "reportUndefinedVariable": "error",
+    "reportMissingImports": "error",
+    "reportMissingModuleSource": "error",
+    "reportPrivateImportUsage": "none",
+    "reportPrivateUsage": "none",
+    "reportMissingTypeStubs": "none",
+    "reportMissingParameterType": "none",
+    "reportUntypedFunctionDecorator": "none",
+    "reportUntypedClassDecorator": "none",
+    "reportUntypedBaseClass": "none",
+    "reportUnknownParameterType": "none",
+    "reportUnknownArgumentType": "none",
+    "reportUnknownLambdaType": "none",
+    "reportUnknownVariableType": "none",
+    "reportUnknownMemberType": "none",
+    
+}

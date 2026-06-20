@@ -1,0 +1,8 @@
+# Sonic Co-Performer Agent — instructor/TA package dependencies.
+# CPU-only. No GPU, no audio I/O libraries, no model downloads.
+# Pinned as lower bounds; the package was validated with the versions noted.
+
+numpy>=1.24          # validated with 2.4.4
+scipy>=1.10          # validated with 1.17.1  (signal + io.wavfile)
+scikit-learn>=1.3    # validated with 1.8.0   (Pipeline, StandardScaler, RandomForest, f1_score)
+joblib>=1.2          # validated with 1.5.3
