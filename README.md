@@ -2,17 +2,8 @@
 
 Static GitHub Pages version of **UCSD CSE 190: Machine Learning for Music & Audio**.
 
-The source of truth for course content is now `course_config.py`. Edit variables there, rebuild the static HTML, then push.
 
-## Fast update flow
-
-```bash
-scripts/rebuild_site.sh && update_github_repo
-```
-
-This matches the existing `update_github_repo` helper style: it adds all files, commits with a timestamp, and force-pushes to `origin master`.
-
-## First push
+## First push (one time)
 
 ```bash
 git init
@@ -24,13 +15,9 @@ git push -f origin master
 scripts/enable_github_pages.sh
 ```
 
-## Editing
+## Editing/Maintenance
 
-Most edits should happen in:
-
-```text
-course_config.py
-```
+Most edits should happen in `course_config.py`:
 
 Examples:
 
@@ -38,7 +25,7 @@ Examples:
 course = "190"
 term = "Summer 2025"
 professor = "Shlomo Dubnov"
-ta = "Girish Krishnan"
+ta = "Keren Shao"
 required_assignments[0]["due"] = "7/5"
 optional_due = "8/1"
 ```
@@ -58,7 +45,7 @@ The generated public files are:
 - `404.html`
 - `data/all_links.csv`
 
-`data/course.json` can remain as an old archive file, but it is no longer used.
+Then add/commit/push to update the repo.
 
 ## Link checks
 
