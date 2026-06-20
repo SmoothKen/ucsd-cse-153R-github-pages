@@ -304,17 +304,6 @@ def repo_name():
     return f"{cfg.institution.lower()}-{cfg.department.lower()}-{cfg.course}-github-pages"
 
 def readme_page():
-    generated = [
-        "index.html",
-        "syllabus.html",
-        "assignments.html",
-        "resources.html",
-        "404.html",
-        "data/all_links.csv",
-        "README.md",
-        "LICENSE_NOTICE.md",
-    ]
-    generated_list = "\n".join(f"- `{x}`" for x in generated)
     return f"""# {site["short_title"]} GitHub Pages site
 
 Static GitHub Pages version of **{site["title"]}**.
@@ -355,7 +344,14 @@ python3 scripts/build_site.py
 
 The generated/rebuilt files are:
 
-{generated_list}
+- `index.html`
+- `syllabus.html`
+- `assignments.html`
+- `resources.html`
+- `404.html`
+- `data/all_links.csv`
+- `README.md`
+- `LICENSE_NOTICE.md`
 
 Then add/commit/push to update the repo.
 
@@ -379,7 +375,7 @@ See `CONTENT_SOURCE.md` for source/provenance notes and `LICENSE_NOTICE.md` for 
 def license_notice_page():
     return f"""# License notice
 
-This repository is a migration scaffold for **{site["title"]}**. Course-source notes are tracked in `CONTENT_SOURCE.md`, and the current extraction date in `scripts/course_config.py` is `{site["last_extracted"]}`.
+This repository is a migration scaffold for **{site["title"]}**.
 
 This notice does not assert ownership over UCSD, instructor, TA, textbook, Google Drive, YouTube, GitHub, Zoom, Canvas, Gradescope, Piazza, or third-party materials linked from the site.
 
