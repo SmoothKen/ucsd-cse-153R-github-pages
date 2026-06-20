@@ -229,24 +229,24 @@ required_intro = "You are required to submit the following 6 programming assignm
 choice_intro = "For the remaining 40% of the grade, you can choose to complete 4 additional assignments or a final project."
 
 required_assignments = [
-    {"number": 0, "title": "Introduction to Music Representation", "url": "https://github.com/rossgreer/ML4Music-HW/blob/main/Introduction%20to%20Music%20Representation.ipynb", "due": "7/5", "self_grade_due": "7/9"},
-    {"number": 1, "title": "Probability & Discrete Fourier Transform", "url": "https://github.com/rossgreer/ML4Music-HW/blob/main/Probability%20and%20Discrete%20Fourier%20Transform.ipynb", "due": "7/5", "self_grade_due": "7/9"},
-    {"number": 2, "title": "Spectrograms, Short-Time Fourier Transform, and Griffin-Lim", "url": "https://github.com/rossgreer/ML4Music-HW/blob/main/Spectrograms%2C%20STFT%20and%20Griffin-Lim%20Phase%20Reconstruction.ipynb", "due": "7/12", "self_grade_due": "7/16"},
-    {"number": 3, "title": "Markov & Lempel Ziv", "url": "https://github.com/rossgreer/ML4Music-HW/blob/main/Markov%20Chain%20and%20LZify.ipynb", "due": "7/12", "self_grade_due": "7/16"},
-    {"number": 4, "title": "Autoencoder De-noising", "url": "https://github.com/rossgreer/ML4Music-HW/blob/main/PCA%20with%20Linear%20Autoencoder.ipynb", "due": "7/19", "self_grade_due": "7/23"},
-    {"number": 5, "title": "RNN MIDI Generation", "url": "https://github.com/rossgreer/ML4Music-HW/blob/main/RNN%20MIDI%20Generation.ipynb", "due": "7/19", "self_grade_due": "7/23"},
+    {"number": 0, "title": "Introduction to Music Representation", "url": "https://github.com/SmoothKen/ucsd-cse-153R-github-pages/blob/master/homework/Introduction%20to%20Music%20Representation.ipynb", "due": "7/5", "self_grade_due": "7/9"},
+    {"number": 1, "title": "Probability & Discrete Fourier Transform", "url": "https://github.com/SmoothKen/ucsd-cse-153R-github-pages/blob/master/homework/Probability%20and%20Discrete%20Fourier%20Transform.ipynb", "due": "7/5", "self_grade_due": "7/9"},
+    {"number": 2, "title": "Spectrograms, Short-Time Fourier Transform, and Griffin-Lim", "url": "https://github.com/SmoothKen/ucsd-cse-153R-github-pages/blob/master/homework/Spectrograms%2C%20STFT%20and%20Griffin-Lim%20Phase%20Reconstruction.ipynb", "due": "7/12", "self_grade_due": "7/16"},
+    {"number": 3, "title": "Markov & Lempel Ziv", "url": "https://github.com/SmoothKen/ucsd-cse-153R-github-pages/blob/master/homework/Markov%20Chain%20and%20LZify.ipynb", "due": "7/12", "self_grade_due": "7/16"},
+    {"number": 4, "title": "Autoencoder De-noising", "url": "https://github.com/SmoothKen/ucsd-cse-153R-github-pages/blob/master/homework/PCA%20with%20Linear%20Autoencoder.ipynb", "due": "7/19", "self_grade_due": "7/23"},
+    {"number": 5, "title": "RNN MIDI Generation", "url": "https://github.com/SmoothKen/ucsd-cse-153R-github-pages/blob/master/homework/RNN%20MIDI%20Generation.ipynb", "due": "7/19", "self_grade_due": "7/23"},
 ]
 
 optional_due = "8/1"
 optional_self_grade_due = "8/4"
 optional_assignments = [
-    {"number": 6, "topic": "Digital Signal Processing", "title": "Speech Formants & LPC", "url": "https://github.com/rossgreer/ML4Music-HW/blob/main/Speech%20Formants%20with%20Linear%20Predictive%20Coding%20and%20Vocoder.ipynb"},
-    {"number": 7, "topic": "Shallow Learning", "title": "VMO Audio", "url": "https://github.com/rossgreer/ML4Music-HW/blob/main/VMO%20Audio%20Oracle%2C%20Information%20Rate%2C%20Generation%20by%20Recombination%2C%20and%20Query-based%20Resynthesis.ipynb"},
-    {"number": 8, "topic": "Deep Learning", "title": "CNN-RNN Genre Classification", "url": "https://github.com/rossgreer/ML4Music-HW/blob/main/CNN-RNN%20Genre%20Classification.ipynb"},
-    {"number": 9, "topic": "Deep Learning", "title": "GAN pix2pix & chroma", "url": "https://github.com/rossgreer/ML4Music-HW/blob/main/GAN%20pix2pix%20Chroma.ipynb"},
+    {"number": 6, "topic": "Digital Signal Processing", "title": "Speech Formants & LPC", "url": "https://github.com/SmoothKen/ucsd-cse-153R-github-pages/blob/master/homework/Speech%20Formants%20with%20Linear%20Predictive%20Coding%20and%20Vocoder.ipynb"},
+    {"number": 7, "topic": "Shallow Learning", "title": "VMO Audio", "url": "https://github.com/SmoothKen/ucsd-cse-153R-github-pages/blob/master/homework/VMO%20Audio%20Oracle%2C%20Information%20Rate%2C%20Generation%20by%20Recombination%2C%20and%20Query-based%20Resynthesis.ipynb"},
+    {"number": 8, "topic": "Deep Learning", "title": "CNN-RNN Genre Classification", "url": "https://github.com/SmoothKen/ucsd-cse-153R-github-pages/blob/master/homework/CNN-RNN%20Genre%20Classification.ipynb"},
+    {"number": 9, "topic": "Deep Learning", "title": "GAN pix2pix & chroma", "url": "https://github.com/SmoothKen/ucsd-cse-153R-github-pages/blob/master/homework/GAN%20pix2pix%20Chroma.ipynb"},
     {"number": 10, "topic": "Deep Learning", "title": "Transformer (GPT) for Music Generation", "options": [
-        {"label": "PyTorch version", "url": "https://github.com/sdubnov/ML4Music-HW/blob/main/Assignment%2010%20PyTorch.ipynb"},
-        {"label": "TensorFlow/Keras version", "url": "https://github.com/sdubnov/ML4Music-HW/blob/main/Assignment%2010%20TensorFlow.ipynb"},
+        {"label": "PyTorch version", "url": "https://github.com/SmoothKen/ucsd-cse-153R-github-pages/blob/master/homework/jazz_transformer_pytorch_ver.ipynb"},
+        {"label": "TensorFlow/Keras version", "url": "https://github.com/SmoothKen/ucsd-cse-153R-github-pages/blob/master/homework/jazz_transformer_tensorflow_ver.ipynb"},
     ]},
 ]
 
