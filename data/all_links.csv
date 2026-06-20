@@ -1,8 +1,8 @@
 source_path,label,url,note
 course_links/0,UCSD DataHub,https://datahub.ucsd.edu/,Recommended Jupyter Notebook programming environment
-course_links/1,Canvas,https://canvas.ucsd.edu/,"Course enrollment code, solutions, recordings, and private course material"
-course_links/2,Gradescope,https://www.gradescope.com/,Course enrollment code on Canvas
-course_links/3,Piazza,https://piazza.com/,Course enrollment code on Canvas
+course_links/1,Canvas,https://canvas.ucsd.edu/courses/76569,"Announcements, solutions, recordings, and private course material"
+course_links/2,Gradescope,https://www.gradescope.com/courses/1328914,Homework submission
+course_links/3,Piazza,https://piazza.com/class/mqk3zewxiah1hd,Q&A
 weeks/0/classes/0/slides/0,slides,https://drive.google.com/file/d/1Sy3uJRgqTbGeFvPL3w5Hs7JjwG1byBGp/view?usp=sharing,
 weeks/0/classes/0/items/1,"Features, Structures, and Representation of Sound and Music Data (MIDI, audio)",https://youtu.be/do8p-nkA7UM,
 weeks/0/classes/0/items/2,LMMS and Audio Tools,https://www.youtube.com/watch?v=n8z94IbYoic,

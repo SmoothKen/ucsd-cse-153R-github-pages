@@ -39,9 +39,9 @@ ta_office_hours_url = "https://ucsd.zoom.us/my/k5shao"
 
 course_links = [
     {"label": "UCSD DataHub", "url": "https://datahub.ucsd.edu/", "note": "Recommended Jupyter Notebook programming environment"},
-    {"label": "Canvas", "url": "https://canvas.ucsd.edu/", "note": "Course enrollment code, solutions, recordings, and private course material"},
-    {"label": "Gradescope", "url": "https://www.gradescope.com/", "note": "Course enrollment code on Canvas"},
-    {"label": "Piazza", "url": "https://piazza.com/", "note": "Course enrollment code on Canvas"},
+    {"label": "Canvas", "url": "https://canvas.ucsd.edu/courses/76569", "note": "Announcements, solutions, recordings, and private course material"},
+    {"label": "Gradescope", "url": "https://www.gradescope.com/courses/1328914", "note": "Homework submission"},
+    {"label": "Piazza", "url": "https://piazza.com/class/mqk3zewxiah1hd", "note": "Q&A"},
 ]
 
 home_notes = [
