@@ -60,14 +60,6 @@ The generated public files are:
 
 `data/course.json` can remain as an old archive file, but it is no longer used.
 
-## Preview locally
-
-```bash
-scripts/preview.sh
-```
-
-Open <http://localhost:8000>.
-
 ## Link checks
 
 ```bash
