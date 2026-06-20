@@ -62,12 +62,6 @@ def shell(title, active, body):
     <main id="main" class="container page">
         {body}
     </main>
-    <footer class="site-footer">
-        <div class="container footer-grid">
-            <p>Static GitHub Pages mirror of the course Google Site. Public course links remain external.</p>
-            <p>Extracted {esc(site["last_extracted"])} · <a href="{esc(site["original_site"])}" target="_blank" rel="noopener">Original Google Site</a></p>
-        </div>
-    </footer>
     <script src="assets/js/site.js"></script>
 </body>
 </html>
@@ -154,11 +148,6 @@ def syllabus_page():
             <p class="lede">Lecture recordings, slide links, prerequisites, and course description.</p>
         </section>
 
-        <section class="callout">
-            <h2>Recording notes</h2>
-            <ul>{notes}</ul>
-        </section>
-
         <section class="card-grid two">
             <article class="card">
                 <p class="eyebrow">Prerequisite</p>
@@ -174,6 +163,12 @@ def syllabus_page():
             <h2>Description</h2>
             <p>{esc(data["syllabus"]["description"])}</p>
         </section>
+
+        <section>
+            <h2>Recording notes</h2>
+            <ul>{notes}</ul>
+        </section>
+
 
         <section class="toolbar" aria-label="Schedule search">
             <label for="schedule-search">Filter schedule</label>

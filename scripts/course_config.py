@@ -22,8 +22,6 @@ site_description = f"{topic} course site migrated from Google Sites to GitHub Pa
 
 # This changes automatically if course changes from "190" to another number.
 course_slug = f"ucsd-cse-{course.lower()}"
-original_site = f"https://sites.google.com/eng.ucsd.edu/{course_slug}/home"
-original_assignments = f"https://sites.google.com/eng.ucsd.edu/{course_slug}/assignments?authuser=0"
 
 # ----------------people-----------------
 
@@ -54,15 +52,16 @@ home_notes = [
 
 # ----------------syllabus top matter-----------------
 
+prerequisite = "MATH 18 AND MATH 20B AND (CSE 103 or ECON 120A or MATH 183 or ECE 109 or MATH 180A or MATH 181A) or instructor approval. Programming ability in Python required. Musical skills are not required but would be an advantage."
+enrollment = "Submit course clearance request via Enrollment Authorization System (EASy)."
+description = "The course covers topics of Machine Learning dealing with music and audio signals, including basic concepts in digital signal processing, MIDI, audio analysis and feature extraction, temporal models including Markov and autoregressive models, and generative neural networks representation learning with applications to automatic music generation and sound synthesis. There will be several short programming assignments that correspond to the lecture materials. Students are given an option to choose between a more advanced final programming assignment set or performing a small group final project of their choice. Prior musical knowledge is not required but would be an advantage."
+
+
 recording_notes = [
     "Recording links below direct to YouTube lecture recordings.",
     "For events specific to this course, such as office hours and project presentations, videos can be found on Canvas under Media Gallery.",
     "Please allow 24 hours for recording uploads. There can be a lag in Zoom processing, and some clips require editing.",
 ]
-
-prerequisite = "MATH 18 AND MATH 20B AND (CSE 103 or ECON 120A or MATH 183 or ECE 109 or MATH 180A or MATH 181A) or instructor approval. Programming ability in Python required. Musical skills are not required but would be an advantage."
-enrollment = "Submit course clearance request via Enrollment Authorization System (EASy)."
-description = "The course covers topics of Machine Learning dealing with music and audio signals, including basic concepts in digital signal processing, MIDI, audio analysis and feature extraction, temporal models including Markov and autoregressive models, and generative neural networks representation learning with applications to automatic music generation and sound synthesis. There will be several short programming assignments that correspond to the lecture materials. Students are given an option to choose between a more advanced final programming assignment set or performing a small group final project of their choice. Prior musical knowledge is not required but would be an advantage."
 
 # ----------------lecture schedule-----------------
 
@@ -299,8 +298,6 @@ course_data = {
         "term": term,
         "short_title": short_title,
         "description": site_description,
-        "original_site": original_site,
-        "original_assignments": original_assignments,
         "timezone": timezone,
         "last_extracted": last_extracted,
     },
