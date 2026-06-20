@@ -322,7 +322,7 @@ scripts/enable_github_pages.sh
 
 ## Editing/Maintenance
 
-Most edits should happen in `scripts/course_config.py` (including README itself).
+Most edits should happen in `scripts/course_config.py`
 
 Examples:
 
