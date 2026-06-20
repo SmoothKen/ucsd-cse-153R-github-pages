@@ -330,7 +330,6 @@ Examples:
 course = {cfg.course!r}
 term = {site["term"]!r}
 professor = "Shlomo Dubnov"
-ta = "Keren Shao"
 required_assignments[0]["due"] = "7/5"
 optional_due = "8/1"
 ```
