@@ -1,13 +1,13 @@
-# UCSD CSE 190 GitHub Pages site
+# UCSD CSE 153R GitHub Pages site
 
-Static GitHub Pages version of **UCSD CSE 190: Machine Learning for Music & Audio**.
+Static GitHub Pages version of **UCSD CSE 153R: Machine Learning for Music & Audio**.
 
 
 ## First push (one time)
 
 ```bash
 git init
-git remote add origin git@github.com:SmoothKen/ucsd-cse-190-github-pages.git
+git remote add origin git@github.com:SmoothKen/ucsd-cse-153R-github-pages.git
 python3 scripts/build_site.py
 git add .
 git commit -m "Initial course site"
