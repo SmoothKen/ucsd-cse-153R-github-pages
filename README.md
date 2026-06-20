@@ -61,6 +61,3 @@ Some Google Drive, Canvas, Zoom, and course-private links may require UCSD login
 
 Place any professor-provided PDFs, images, notebooks, or handouts under `assets/files/` if you want them served directly by GitHub Pages. Restricted Google Drive resources are intentionally preserved as external links.
 
-## License and source notes
-
-See `CONTENT_SOURCE.md` for source/provenance notes and `LICENSE_NOTICE.md` for the repository license notice.
