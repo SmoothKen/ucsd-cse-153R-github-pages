@@ -226,9 +226,7 @@ weeks = [
 
 # ----------------assignments-----------------
 
-required_intro = "We will provide 10 programming assignments during the course. You are required to submit the following 6 programming assignments, each worth 10% of your grade."
-due_note = "All due dates are for 11:59 PM Pacific Time."
-required_grade_note = "The above six required assignments are 60% of the grade."
+required_intro = "You are required to submit the following 6 programming assignments, each worth 10% of your grade. All due dates are for 11:59 PM Pacific Time."
 choice_intro = "For the remaining 40% of the grade, you can choose to complete 4 additional assignments or a final project."
 
 required_assignments = [
@@ -321,8 +319,6 @@ course_data = {
     "weeks": weeks,
     "assignments": {
         "required_intro": required_intro,
-        "due_note": due_note,
-        "required_grade_note": required_grade_note,
         "choice_intro": choice_intro,
         "required": required_assignments,
         "optional_due": optional_due,

@@ -209,21 +209,16 @@ def assignments_page():
             <p class="lede">Programming assignments, optional assignment track, final project track, and self-grading instructions.</p>
         </section>
 
-        <section class="callout">
-            <h2>Homework assignments</h2>
-            <p>{esc(assn["required_intro"])}</p>
-            <p>{esc(assn["due_note"])}</p>
-        </section>
-
         <section>
             <h2>Required assignments</h2>
+            <p>{esc(assn["required_intro"])}</p>
+
             <div class="table-wrap">
                 <table>
                     <thead><tr><th>#</th><th>Assignment</th><th>Due</th><th>Self-grades due</th></tr></thead>
                     <tbody>{required}</tbody>
                 </table>
             </div>
-            <p>{esc(assn["required_grade_note"])}</p>
         </section>
 
         <section>
