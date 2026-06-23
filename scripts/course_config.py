@@ -229,16 +229,15 @@ required_intro = "You are required to submit the following 6 programming assignm
 choice_intro = "For the remaining 40% of the grade, you can choose to complete 4 additional assignments or a final project."
 
 required_assignments = [
-    {"number": 0, "title": "Introduction to Music Representation", "url": "https://github.com/SmoothKen/ucsd-cse-153R-github-pages/blob/master/homework/Introduction%20to%20Music%20Representation.ipynb", "due": "7/5", "self_grade_due": "7/9"},
-    {"number": 1, "title": "Probability & Discrete Fourier Transform", "url": "https://github.com/SmoothKen/ucsd-cse-153R-github-pages/blob/master/homework/Probability%20and%20Discrete%20Fourier%20Transform.ipynb", "due": "7/5", "self_grade_due": "7/9"},
-    {"number": 2, "title": "Spectrograms, Short-Time Fourier Transform, and Griffin-Lim", "url": "https://github.com/SmoothKen/ucsd-cse-153R-github-pages/blob/master/homework/Spectrograms%2C%20STFT%20and%20Griffin-Lim%20Phase%20Reconstruction.ipynb", "due": "7/12", "self_grade_due": "7/16"},
-    {"number": 3, "title": "Markov & Lempel Ziv", "url": "https://github.com/SmoothKen/ucsd-cse-153R-github-pages/blob/master/homework/Markov%20Chain%20and%20LZify.ipynb", "due": "7/12", "self_grade_due": "7/16"},
-    {"number": 4, "title": "Autoencoder De-noising", "url": "https://github.com/SmoothKen/ucsd-cse-153R-github-pages/blob/master/homework/PCA%20with%20Linear%20Autoencoder.ipynb", "due": "7/19", "self_grade_due": "7/23"},
-    {"number": 5, "title": "RNN MIDI Generation", "url": "https://github.com/SmoothKen/ucsd-cse-153R-github-pages/blob/master/homework/RNN%20MIDI%20Generation.ipynb", "due": "7/19", "self_grade_due": "7/23"},
+    {"number": 0, "title": "Introduction to Music Representation", "url": "https://github.com/SmoothKen/ucsd-cse-153R-github-pages/blob/master/homework/Introduction%20to%20Music%20Representation.ipynb"},
+    {"number": 1, "title": "Probability & Discrete Fourier Transform", "url": "https://github.com/SmoothKen/ucsd-cse-153R-github-pages/blob/master/homework/Probability%20and%20Discrete%20Fourier%20Transform.ipynb"},
+    {"number": 2, "title": "Spectrograms, Short-Time Fourier Transform, and Griffin-Lim", "url": "https://github.com/SmoothKen/ucsd-cse-153R-github-pages/blob/master/homework/Spectrograms%2C%20STFT%20and%20Griffin-Lim%20Phase%20Reconstruction.ipynb"},
+    {"number": 3, "title": "Markov & Lempel Ziv", "url": "https://github.com/SmoothKen/ucsd-cse-153R-github-pages/blob/master/homework/Markov%20Chain%20and%20LZify.ipynb"},
+    {"number": 4, "title": "Autoencoder De-noising", "url": "https://github.com/SmoothKen/ucsd-cse-153R-github-pages/blob/master/homework/PCA%20with%20Linear%20Autoencoder.ipynb"},
+    {"number": 5, "title": "RNN MIDI Generation", "url": "https://github.com/SmoothKen/ucsd-cse-153R-github-pages/blob/master/homework/RNN%20MIDI%20Generation.ipynb"},
 ]
 
-optional_due = "8/1"
-optional_self_grade_due = "8/4"
+
 optional_assignments = [
     {"number": 6, "topic": "Digital Signal Processing", "title": "Speech Formants & LPC", "url": "https://github.com/SmoothKen/ucsd-cse-153R-github-pages/blob/master/homework/Speech%20Formants%20with%20Linear%20Predictive%20Coding%20and%20Vocoder.ipynb"},
     {"number": 7, "topic": "Shallow Learning", "title": "VMO Audio", "url": "https://github.com/SmoothKen/ucsd-cse-153R-github-pages/blob/master/homework/VMO%20Audio%20Oracle%2C%20Information%20Rate%2C%20Generation%20by%20Recombination%2C%20and%20Query-based%20Resynthesis.ipynb"},
@@ -250,13 +249,53 @@ optional_assignments = [
     ]},
 ]
 
+
+
+
+
+# Mirror assignment deadlines to the course year's July calendar.
+# Python weekdays: Monday=0, Wednesday=2, Friday=4, Saturday=5.
+from datetime import date, timedelta
+
+assignment_year = int(term.split()[-1])
+
+MONDAY = 0
+TUESDAY = 1
+WEDNESDAY = 2
+THURSDAY = 3
+FRIDAY = 4
+SATURDAY = 5
+
+def july_weekday(n, weekday):
+    d = date(assignment_year, 7, 1)
+    d += timedelta(days=(weekday - d.weekday()) % 7, weeks=n - 1)
+    return f"{d.month}/{d.day}"
+
+for i, due_week, self_grade_week in [
+    (0, 1, 2),
+    (1, 1, 2),
+    (2, 2, 3),
+    (3, 2, 3),
+    (4, 3, 4),
+    (5, 3, 4),
+]:
+    required_assignments[i]["due"] = july_weekday(due_week, SATURDAY)
+    required_assignments[i]["self_grade_due"] = july_weekday(self_grade_week, WEDNESDAY)
+
+optional_due = july_weekday(5, THURSDAY)
+optional_self_grade_due = july_weekday(5, SATURDAY)
+
+
+
+
+
 project = {
     "title": "Final Project",
     "url": "https://drive.google.com/file/d/1ILRju3uoe4Rf_vzHJU2KE4lX8fJ_3gHE/view?usp=sharing",
     "milestones": [
-        {"label": "Project Proposal", "weight": "10%", "due": "7/22"},
-        {"label": "Presentation", "weight": "15%", "due": "7/29 recorded + live Q&A session on 7/30 during Girish's Wednesday office hours"},
-        {"label": "Report", "weight": "15%", "due": "8/2"},
+        {"label": "Project Proposal", "weight": "10%", "due": july_weekday(4, TUESDAY)},
+        {"label": "Presentation", "weight": "15%", "due": f"{july_weekday(4, TUESDAY)} recorded + live Q&A session on {july_weekday(4, WEDNESDAY)} during Girish's Wednesday office hours"},
+        {"label": "Report", "weight": "15%", "due": optional_self_grade_due},
     ],
     "previous_projects_url": "https://drive.google.com/drive/folders/1kDGynccVlXuGgM0RzlfUTYNLqQs1vLfX?usp=sharing",
 }
