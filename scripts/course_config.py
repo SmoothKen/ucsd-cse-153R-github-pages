@@ -32,7 +32,7 @@ professor_office_hours_url = "https://ucsd.zoom.us/j/97315192509"
 
 ta = "Keren Shao"
 ta_email = "k5shao@ucsd.edu"
-ta_office_hours = "Zoom office hours: Wednesdays 10 AM - 11 AM or by appointment"
+ta_office_hours = "Zoom office hours: Thursdays 4 PM - 5 PM or by appointment"
 ta_office_hours_url = "https://ucsd.zoom.us/my/k5shao"
 
 # ----------------home links/notes-----------------
@@ -293,8 +293,8 @@ project = {
     "title": "Final Project",
     "url": "https://drive.google.com/file/d/1ILRju3uoe4Rf_vzHJU2KE4lX8fJ_3gHE/view?usp=sharing",
     "milestones": [
-        {"label": "Project Proposal", "weight": "10%", "due": july_weekday(4, TUESDAY)},
-        {"label": "Presentation", "weight": "15%", "due": f"{july_weekday(4, TUESDAY)} recorded + live Q&A session on {july_weekday(4, WEDNESDAY)} during Girish's Wednesday office hours"},
+        {"label": "Project Proposal", "weight": "10%", "due": july_weekday(4, WEDNESDAY)},
+        {"label": "Presentation", "weight": "15%", "due": f"{july_weekday(5, WEDNESDAY)} recorded + live Q&A session on {july_weekday(5, THURSDAY)} during Keren's Wednesday office hours"},
         {"label": "Report", "weight": "15%", "due": optional_self_grade_due},
     ],
     "previous_projects_url": "https://drive.google.com/drive/folders/1kDGynccVlXuGgM0RzlfUTYNLqQs1vLfX?usp=sharing",
