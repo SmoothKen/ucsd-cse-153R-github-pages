@@ -38,8 +38,8 @@ ta_office_hours_url = "https://ucsd.zoom.us/my/k5shao"
 
 tutor = "Hargen Zheng"
 tutor_email = "yoz018@ucsd.edu"
-tutor_office_hours = ""
-tutor_office_hours_url = ""
+tutor_office_hours = "Zoom office hours: Fridays 12 PM - 1 PM"
+tutor_office_hours_url = "https://ucsd.zoom.us/my/hgzheng"
 
 
 # ----------------home links/notes-----------------
