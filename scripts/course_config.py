@@ -309,7 +309,7 @@ project = {
     "previous_projects_url": "https://drive.google.com/drive/folders/1kDGynccVlXuGgM0RzlfUTYNLqQs1vLfX?usp=sharing",
 }
 
-self_grading_form_url = "https://docs.google.com/forms/d/e/1FAIpQLSdlNjPimuBSKSwlVJnav5MsH6wNqLnn39TeLpBncbrRdjK4IQ/viewform?usp=sf_link"
+self_grading_form_url = "https://docs.google.com/forms/d/e/1FAIpQLScW0pJNQLWb5mElqlWN4RPgqhsNgU0Oc_qwZVylazLBKzN32g/viewform?usp=dialog"
 self_grading_instructions = [
     "After the homework deadline, solutions will be posted online on Canvas. Students are expected to read the solutions and enter their own scores and comments for every part of every problem using the self-grading form.",
     "After filling out the form, upload a corrected version of the assignment to Gradescope.",
