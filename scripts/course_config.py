@@ -248,7 +248,7 @@ optional_assignments = [
         {"label": "PyTorch version", "url": "https://github.com/SmoothKen/ucsd-cse-153R-github-pages/blob/master/homework/jazz_transformer_pytorch_ver.ipynb"},
         {"label": "TensorFlow/Keras version", "url": "https://github.com/SmoothKen/ucsd-cse-153R-github-pages/blob/master/homework/jazz_transformer_tensorflow_ver.ipynb"},
     ]},
-    {"number": 8, "topic": "Deep Learning", "title": "Diffusion/Style Transfer", "url": "https://github.com/SmoothKen/ucsd-cse-153R-github-pages/blob/master/homework/diffusion_student_ver/homework4_diffusion_assignment.ipynb"},
+    {"number": 8, "topic": "Deep Learning", "title": "Diffusion/Style Transfer", "url": "https://github.com/SmoothKen/ucsd-cse-153R-github-pages/blob/master/homework/diffusion_student_ver/diffusion_updated.ipynb"},
     {"number": 9, "topic": "Deep Learning", "title": "Improvisation Voice Agent", "url": "https://github.com/SmoothKen/ucsd-cse-153R-github-pages/blob/master/homework/voice_agents_student_ver/submission.py"},
 ]
 
