@@ -240,13 +240,15 @@ required_assignments = [
 
 optional_assignments = [
     {"number": 6, "topic": "Digital Signal Processing", "title": "Speech Formants & LPC", "url": "https://github.com/SmoothKen/ucsd-cse-153R-github-pages/blob/master/homework/Speech%20Formants%20with%20Linear%20Predictive%20Coding%20and%20Vocoder.ipynb"},
-    {"number": 7, "topic": "Shallow Learning", "title": "VMO Audio", "url": "https://github.com/SmoothKen/ucsd-cse-153R-github-pages/blob/master/homework/VMO%20Audio%20Oracle%2C%20Information%20Rate%2C%20Generation%20by%20Recombination%2C%20and%20Query-based%20Resynthesis.ipynb"},
-    {"number": 8, "topic": "Deep Learning", "title": "CNN-RNN Genre Classification", "url": "https://github.com/SmoothKen/ucsd-cse-153R-github-pages/blob/master/homework/CNN-RNN%20Genre%20Classification.ipynb"},
-    {"number": 9, "topic": "Deep Learning", "title": "GAN pix2pix & chroma", "url": "https://github.com/SmoothKen/ucsd-cse-153R-github-pages/blob/master/homework/GAN%20pix2pix%20Chroma.ipynb"},
-    {"number": 10, "topic": "Deep Learning", "title": "Transformer (GPT) for Music Generation", "options": [
+    # {"number": 7, "topic": "Shallow Learning", "title": "VMO Audio", "url": "https://github.com/SmoothKen/ucsd-cse-153R-github-pages/blob/master/homework/VMO%20Audio%20Oracle%2C%20Information%20Rate%2C%20Generation%20by%20Recombination%2C%20and%20Query-based%20Resynthesis.ipynb"},
+    # {"number": 8, "topic": "Deep Learning", "title": "CNN-RNN Genre Classification", "url": "https://github.com/SmoothKen/ucsd-cse-153R-github-pages/blob/master/homework/CNN-RNN%20Genre%20Classification.ipynb"},
+    # {"number": 6, "topic": "Deep Learning", "title": "GAN pix2pix & chroma", "url": "https://github.com/SmoothKen/ucsd-cse-153R-github-pages/blob/master/homework/GAN%20pix2pix%20Chroma.ipynb"},
+    {"number": 7, "topic": "Deep Learning", "title": "Transformer (GPT) for Music Generation", "options": [
         {"label": "PyTorch version", "url": "https://github.com/SmoothKen/ucsd-cse-153R-github-pages/blob/master/homework/jazz_transformer_pytorch_ver.ipynb"},
         {"label": "TensorFlow/Keras version", "url": "https://github.com/SmoothKen/ucsd-cse-153R-github-pages/blob/master/homework/jazz_transformer_tensorflow_ver.ipynb"},
     ]},
+    {"number": 8, "topic": "Deep Learning", "title": "Diffusion/Style Transfer", "url": "https://github.com/SmoothKen/ucsd-cse-153R-github-pages/blob/master/homework/diffusion_student_ver/homework4_diffusion_assignment.ipynb"},
+    {"number": 9, "topic": "Deep Learning", "title": "Improvisation Voice Agent", "url": "https://github.com/SmoothKen/ucsd-cse-153R-github-pages/blob/master/homework/voice_agents_student_ver/submission.py"},
 ]
 
 

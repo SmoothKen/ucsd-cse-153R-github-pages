@@ -221,7 +221,7 @@ def assignments_page():
             <p>{esc(assn["choice_intro"])}</p>
             <article class="card">
                 <h3>Option 1: Assignments</h3>
-                <p>Choose 4 of these 5 assignments. Each assignment is worth 10% of the grade. Due {esc(assn["optional_due"])}, with self-grading due {esc(assn["optional_self_grade_due"])}.</p>
+                <p>Complete the following 4 assignments. Each assignment is worth 10% of the grade. Due {esc(assn["optional_due"])}, with self-grading due {esc(assn["optional_self_grade_due"])}.</p>
                 <div class="table-wrap">
                     <table>
                         <thead><tr><th>#</th><th>Assignment</th><th>Due</th><th>Self-grades due</th></tr></thead>
