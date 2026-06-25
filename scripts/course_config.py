@@ -349,10 +349,12 @@ course_data = {
         "timezone": timezone,
         "last_extracted": last_extracted,
     },
-    "people": [
+"people": [
         {"role": "Professor", "name": professor, "email": professor_email, "office_hours": professor_office_hours, "office_hours_url": professor_office_hours_url},
         {"role": "TA", "name": ta, "email": ta_email, "office_hours": ta_office_hours, "office_hours_url": ta_office_hours_url},
+        {"role": "Tutor", "name": tutor, "email": tutor_email, "office_hours": tutor_office_hours, "office_hours_url": tutor_office_hours_url},
     ],
+    
     "course_links": course_links,
     "home_notes": home_notes,
     "syllabus": {

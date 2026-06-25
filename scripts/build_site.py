@@ -76,11 +76,13 @@ def home_page():
             <p class="eyebrow">{esc(p["role"])}</p>
             <h3>{esc(p["name"])}</h3>
             <p><a href="mailto:{esc(p["email"])}">{esc(p["email"])}</a></p>
-            <p>{esc(p["office_hours"])}</p>
-            <p>{link("Zoom link", p["office_hours_url"], "button")}</p>
+            {f'<p>{esc(p["office_hours"])}</p>' if p.get("office_hours") else ''}
+            {f'<p>{link("Zoom link", p["office_hours_url"], "button")}</p>' if p.get("office_hours_url") else ''}
         </article>'''
         for p in data["people"]
     )
+
+    
     course_links = "\n".join(
         f'<li><strong>{link(x["label"], x["url"])}</strong><span>{esc(x.get("note", ""))}</span></li>'
         for x in data["course_links"]
