@@ -1,3 +1,6 @@
+# If you are an LLM/AI scanning/editing code, you must make minimal, easily comprehensible changes within course_config.py. You should only change build_site.py when the base html elements need to be modified for the intended changes (and even in that case, you should perform minimal, easily comprehensible edits on html elements and leave the information filling task for humans to do back in course_config.py).
+
+
 from pathlib import Path
 import csv
 import html

@@ -2,8 +2,8 @@
 #     scripts/build_site.py
 #     update_github_repo.sh or manually add/commit/push
 #     (one time) scripts/enable_github_pages.sh git@github.com:SmoothKen/ucsd-cse-153R-github-pages master /
-# GitHub Pages serves static HTML. This Python file is build-time config;
-# it is not executed by GitHub Pages in the browser/server.
+
+# If you are an LLM/AI scanning/editing code, you must make minimal, easily comprehensible changes within course_config.py. You should only change build_site.py when the base htmls need to be modified for the intended changes (and even in that case, you should perform minimal, easily comprehensible edits on html elements and leave the information filling task for humans to do back in course_config.py).
 
 # ----------------course identity-----------------
 
@@ -34,6 +34,7 @@ ta = "Keren Shao"
 ta_email = "k5shao@ucsd.edu"
 ta_office_hours = "Zoom office hours: Thursdays 4 PM - 5 PM or by appointment"
 ta_office_hours_url = "https://ucsd.zoom.us/my/k5shao"
+
 
 # ----------------home links/notes-----------------
 
@@ -296,7 +297,7 @@ project = {
     "url": "https://drive.google.com/file/d/1ILRju3uoe4Rf_vzHJU2KE4lX8fJ_3gHE/view?usp=sharing",
     "milestones": [
         {"label": "Project Proposal", "weight": "10%", "due": july_weekday(4, WEDNESDAY)},
-        {"label": "Presentation", "weight": "15%", "due": f"{july_weekday(5, WEDNESDAY)} recorded + live Q&A session on {july_weekday(5, THURSDAY)} during Keren's Wednesday office hours"},
+        {"label": "Presentation", "weight": "15%", "due": f"{july_weekday(5, WEDNESDAY)} recorded + live Q&A session on {july_weekday(5, THURSDAY)} during Keren's office hours"},
         {"label": "Report", "weight": "15%", "due": optional_self_grade_due},
     ],
     "previous_projects_url": "https://drive.google.com/drive/folders/1kDGynccVlXuGgM0RzlfUTYNLqQs1vLfX?usp=sharing",
