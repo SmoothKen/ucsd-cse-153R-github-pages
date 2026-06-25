@@ -223,6 +223,7 @@ section > h2 {
 
 .card-grid {
     display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 18px;
 }
 
@@ -250,9 +251,10 @@ section > h2 {
     line-height: 1.25;
 }
 
-.card + .card {
+section > .card + .card {
     margin-top: 18px;
 }
+
 
 .callout {
     padding: 28px;
@@ -416,7 +418,8 @@ tr:last-child td {
         padding: 34px 24px;
     }
 
-    .card-grid.two,
+
+	.card-grid,
     .class-grid {
         grid-template-columns: 1fr;
     }

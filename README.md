@@ -1,6 +1,6 @@
 # UCSD CSE 153R GitHub Pages site
 
-Static GitHub Pages version of **UCSD CSE 153R: Machine Learning for Music & Audio**.
+Static GitHub Pages version of **UCSD CSE 153R: Machine Learning for Music & Audio**. As a reminder, the self-grading google form is at https://docs.google.com/forms/d/1YGNFMd6C5QRJQTQ0Oa9x0-1-OracGLfocwWccI_ISTM/edit?ts=663a69ef
 
 ## First push (one time)
 

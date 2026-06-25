@@ -104,7 +104,7 @@ def home_page():
                 <p class="eyebrow">Contacts</p>
                 <h2 id="people">Course staff</h2>
             </div>
-            <div class="card-grid two">{people}</div>
+            <div class="card-grid">{people}</div>
         </section>
 
         <section aria-labelledby="course-links">
@@ -311,7 +311,7 @@ def repo_name():
 def readme_page():
     return f"""# {site["short_title"]} GitHub Pages site
 
-Static GitHub Pages version of **{site["title"]}**.
+Static GitHub Pages version of **{site["title"]}**. As a reminder, the self-grading google form is at https://docs.google.com/forms/d/1YGNFMd6C5QRJQTQ0Oa9x0-1-OracGLfocwWccI_ISTM/edit?ts=663a69ef
 
 ## First push (one time)
 
