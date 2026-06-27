@@ -233,6 +233,7 @@ weeks = [
                             {"label": "Anthony Wang", "url": "https://www.linkedin.com/in/anthony-wang73/"},
                         ],
                     },
+                    {"label": "Introduction to Flow Matching", "url": "https://www.youtube.com/watch?v=tlO5PQwHKV8"},
                     {"label": "Efficient Text-to-Music Generation via Flow Matching with Bidirectional Mamba SSM"},
                 ],
             },
