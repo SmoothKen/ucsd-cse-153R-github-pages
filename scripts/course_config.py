@@ -27,7 +27,7 @@ course_slug = f"ucsd-cse-{course.lower()}"
 
 professor = "Shlomo Dubnov"
 professor_email = "sdubnov@ucsd.edu"
-professor_office_hours = "Zoom office hours: Mondays 11 AM - 12 PM"
+professor_office_hours = "Zoom office hours: Mondays 10 AM - 11 PM"
 professor_office_hours_url = "https://ucsd.zoom.us/j/97315192509"
 
 ta = "Keren Shao"

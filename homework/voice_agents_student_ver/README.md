@@ -20,7 +20,7 @@ By the end of this assignment, you should be able to:
 
 This assignment is designed for UCSD DataHub-style constraints. A GPU is not required. The reference solution passes the hidden grader on CPU in roughly 9 seconds with peak traced Python memory under 150 MB. A machine without a GPU, or with a basic GPU, is sufficient.
 
-Allowed dependencies only: **numpy, scipy, scikit-learn, joblib**. CPU only; no internet access, no model downloads, and no extra packages.
+Allowed dependencies only: **numpy, scipy, scikit-learn**. CPU only; no internet access, no model downloads, and no extra packages.
 
 ## Data: six sonic control cues
 
