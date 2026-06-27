@@ -233,7 +233,6 @@ weeks = [
                         ],
                     },
                     {"label": "Efficient Text-to-Music Generation via Flow Matching with Bidirectional Mamba SSM"},
-                    {"label": "An Introduction to Flow Matching"},
                 ],
             },
             {
