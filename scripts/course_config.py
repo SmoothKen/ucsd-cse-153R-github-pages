@@ -205,13 +205,24 @@ weeks = [
                 ],
             },
             {"title": "Project Proposal Presentations", "items": [{"label": "Project Proposal Presentations"}]},
-            {"title": "Class 14", "items": [{"label": "Project Proposal Presentations"}]},
             {
-                "title": "Class 15",
-                "slides": [{"label": "slides", "url": "https://drive.google.com/file/d/1srV4PrDmYXUH79ahyJAbTM6BpbpmdESg/view?usp=sharing"}],
+                "title": "Class 14: Listening Machines",
+                "slides": [
+                    {"label": "intro slides", "url": "assets/guest_slides/Listening_Machines_intro.pdf"},
+                ],
                 "items": [
-                    {"label": "Course Materials Review", "url": "https://www.youtube.com/watch?v=mJDibKm-L1g"},
-                    {"label": "Note: There is no quiz in the class and this video is for review purposes only."},
+                    {"label": "Guest lecture by Dr. Amir Ivry"},
+                    {"label": "Listening Machines: From Music Information Dynamics to Voice and Multi-Agent Co-Performance"},
+                ],
+            },
+            {
+                "title": "Class 15: Mamba + Flow Matching",
+                "slides": [
+                    {"label": "Mamba + flow matching slides", "url": "assets/guest_slides/ATTM%20Bidirectional%20Mamba%20SSM%20%2B%20Flow%20Matching.pdf"},
+                ],
+                "items": [
+                    {"label": "Guest lecture by Anthony Wang"},
+                    {"label": "Efficient Text-to-Music Generation via Flow Matching with Bidirectional Mamba SSM"},
                 ],
             },
             {
