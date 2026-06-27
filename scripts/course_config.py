@@ -218,7 +218,7 @@ weeks = [
             {
                 "title": "Class 15: Mamba + Flow Matching",
                 "slides": [
-                    {"label": "Mamba + flow matching slides", "url": "assets/guest_slides/ATTM%20Bidirectional%20Mamba%20SSM%20%2B%20Flow%20Matching.pdf"},
+                    {"label": "slides", "url": "assets/guest_slides/ATTM%20Bidirectional%20Mamba%20SSM%20%2B%20Flow%20Matching.pdf"},
                 ],
                 "items": [
                     {"label": "Guest lecture by Anthony Wang"},
