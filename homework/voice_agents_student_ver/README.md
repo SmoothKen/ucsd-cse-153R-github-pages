@@ -88,17 +88,17 @@ model = fit_cue_model(train)
 
 Each item is a dict with keys `audio` (1-D float64 in [-1, 1]), `sr` (16000), `cue`, `topic_id`, `target_action`, and `item_id`.
 
-Listen to the audio and measure it. Useful cues may appear in energy, zero-crossing rate, silence ratio, spectral shape, dominant-frequency motion, onset density, decay, and band-energy ratios. There is deliberately no official list of the right features; discovering them is part of the assignment.
+Listen to the audio and measure it. That is how you discover what separates the cues — energy, spectral shape, frequency motion, onset density, decay. There is deliberately no official list of the right features; discovering them is part of the assignment.
 
-## Part A: audio features [20 pts]
+## Part A: audio features
 
-Implement `extract_features`. The feature vector must be one-dimensional, finite, and deterministic. Good features include RMS energy, peak level, zero-crossing rate, silence ratio, spectral centroid, spectral bandwidth, spectral flatness, dominant frequency, dominant-frequency motion from first half to second half, onset density, and band-energy ratios.
+Implement `extract_features`. Your feature vector must be one-dimensional, finite, and deterministic. Designing features that separate the six cues is the heart of this part — discover them from the audio (see above) rather than copying a list.
 
-## Part B: cue classifier [25 pts]
+## Part B: cue classifier
 
 Implement `fit_cue_model` and `predict_cue`. The grader supplies training items containing waveform, sampling rate, cue label, topic id, and target action. You may use a lightweight model such as logistic regression, random forest, support vector machine, or gradient boosting. The hidden score is based on macro-F1 across the six cue labels.
 
-## Part C: interaction policy [25 pts]
+## Part C: interaction policy
 
 Implement `reset_policy` and `choose_action`. The policy receives the cue, features, and current state. It must return an action and an updated state. Maintain at least a turn counter and last action; you may also estimate the topic/motif from dominant frequency.
 
@@ -115,7 +115,7 @@ end       -> close
 
 The hidden grader includes multiple scripted interactions. It gives separate credit for overall action accuracy and for the drift repair rate.
 
-## Part D: response synthesis [12 pts]
+## Part D: response synthesis
 
 Implement `synthesize_response`. Each action should sound like its musical function, not merely be a valid waveform. The output must be a finite one-dimensional NumPy array, roughly the requested duration, and peak-normalized to [-1, 1].
 
@@ -130,7 +130,7 @@ Implement `synthesize_response`. Each action should sound like its musical funct
 
 The autograder checks only that each response is a valid waveform. The musical character of your six responses is assessed in the report, so aim for six distinct gestures rather than one tone reused six times.
 
-## Part E: report and trace [20 pts]
+## Part E: report and trace
 
 Submit a one-page PDF report and one policy trace file. The report must include:
 
@@ -204,4 +204,4 @@ Do not submit large model weights or generated datasets. Your code should be det
 [13] A. Goel et al. Audio Flamingo 3: Advancing Audio Intelligence with Fully Open Large Audio Language Models. arXiv:2507.08128, 2025.  
 [14] A. Ivry, S. Cornell, and S. Watanabe. MAPSS: Manifold-based Assessment of Perceptual Source Separation. ICLR, 2026.  
 [15] A. Ivry and S. Watanabe. LALM-as-a-Judge: Benchmarking Large Audio-Language Models for Safety Evaluation in Multi-Turn Spoken Dialogues. ICML, 2026.  
-[16] A. Ivry. Task-Aware Answer Preservation under Audio Compression for Large Audio Language Models. arXiv:2605.06631, 2026.
+[16] A. Ivry. Task-Aware Answer Preservation under Audio Compression for Large Audio Language Models. arXiv:2605.06631, NeurIPS, 2026 (under review).
