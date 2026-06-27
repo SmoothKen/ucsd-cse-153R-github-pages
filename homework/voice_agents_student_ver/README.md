@@ -204,4 +204,4 @@ Do not submit large model weights or generated datasets. Your code should be det
 [13] A. Goel et al. Audio Flamingo 3: Advancing Audio Intelligence with Fully Open Large Audio Language Models. arXiv:2507.08128, 2025.  
 [14] A. Ivry, S. Cornell, and S. Watanabe. MAPSS: Manifold-based Assessment of Perceptual Source Separation. ICLR, 2026.  
 [15] A. Ivry and S. Watanabe. LALM-as-a-Judge: Benchmarking Large Audio-Language Models for Safety Evaluation in Multi-Turn Spoken Dialogues. ICML, 2026.  
-[16] A. Ivry. Task-Aware Answer Preservation under Audio Compression for Large Audio Language Models. arXiv:2605.06631, NeurIPS, 2026 (under review).
+[16] A. Ivry. Task-Aware Answer Preservation under Audio Compression for Large Audio Language Models. arXiv:2605.06631, 2026.
