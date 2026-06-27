@@ -131,11 +131,22 @@ def syllabus_page():
             slide_html = ""
             if c.get("slides"):
                 slide_html = '<p class="resource-line">' + " · ".join(link(s["label"], s["url"], "pill") for s in c["slides"]) + '</p>'
+
+
             items = []
             for item in c.get("items", []):
-                label = link(item["label"], item["url"]) if item.get("url") else esc(item["label"])
+                if item.get("parts"):
+                    label = "".join(
+                        link(p["label"], p["url"]) if p.get("url") else esc(p["label"])
+                        for p in item["parts"]
+                    )
+                else:
+                    label = link(item["label"], item["url"]) if item.get("url") else esc(item["label"])
                 note = f' <span class="muted">({esc(item["note"])})</span>' if item.get("note") else ""
                 items.append(f'<li>{label}{note}</li>')
+
+
+
             classes.append(f'''<article class="class-card searchable">
                 <h3>{esc(c["title"])}</h3>
                 {slide_html}

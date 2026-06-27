@@ -211,7 +211,12 @@ weeks = [
                     {"label": "intro slides", "url": "assets/guest_slides/Listening_Machines_intro.pdf"},
                 ],
                 "items": [
-                    {"label": "Guest lecture by Dr. Amir Ivry"},
+                    {
+                        "parts": [
+                            {"label": "Guest lecture by "},
+                            {"label": "Dr. Amir Ivry", "url": "https://amir-ivry.github.io/"},
+                        ],
+                    },
                     {"label": "Listening Machines: From Music Information Dynamics to Voice and Multi-Agent Co-Performance"},
                 ],
             },
@@ -221,8 +226,14 @@ weeks = [
                     {"label": "slides", "url": "assets/guest_slides/ATTM%20Bidirectional%20Mamba%20SSM%20%2B%20Flow%20Matching.pdf"},
                 ],
                 "items": [
-                    {"label": "Guest lecture by Anthony Wang"},
+                    {
+                        "parts": [
+                            {"label": "Guest lecture by "},
+                            {"label": "Anthony Wang", "url": "https://www.linkedin.com/in/anthony-wang73/"},
+                        ],
+                    },
                     {"label": "Efficient Text-to-Music Generation via Flow Matching with Bidirectional Mamba SSM"},
+                    {"label": "An Introduction to Flow Matching"},
                 ],
             },
             {
