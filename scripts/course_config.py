@@ -258,6 +258,8 @@ weeks = [
 required_intro = "You are required to submit the following 6 programming assignments, each worth 10% of your grade. All due dates are for 11:59 PM Pacific Time."
 choice_intro = "For the remaining 40% of the grade, you can choose to complete 4 additional assignments or a final project."
 
+ai_disclosure_policy = "For every assignment/project, disclose and cite any AI tools you used, with a brief description of how you used them. Failure to disclose AI-tool use, if detected by our software or staff, will be treated as a academic-integrity violation and may result in academic and/or administrative sanctions."
+
 required_assignments = [
     {"number": 0, "title": "Introduction to Music Representation", "url": "https://github.com/SmoothKen/ucsd-cse-153R-github-pages/blob/master/homework/Introduction%20to%20Music%20Representation.ipynb"},
     {"number": 1, "title": "Probability & Discrete Fourier Transform", "url": "https://github.com/SmoothKen/ucsd-cse-153R-github-pages/blob/master/homework/Probability%20and%20Discrete%20Fourier%20Transform.ipynb"},
@@ -390,6 +392,7 @@ course_data = {
     "assignments": {
         "required_intro": required_intro,
         "choice_intro": choice_intro,
+        "ai_disclosure_policy": ai_disclosure_policy,
         "required": required_assignments,
         "optional_due": optional_due,
         "optional_self_grade_due": optional_self_grade_due,
