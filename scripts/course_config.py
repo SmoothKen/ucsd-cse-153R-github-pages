@@ -218,6 +218,14 @@ weeks = [
                         ],
                     },
                     {"label": "Listening Machines: From Music Information Dynamics to Voice and Multi-Agent Co-Performance"},
+
+                    
+                    {"label": "Opening", "url": "https://drive.google.com/file/d/1t1RIh6lXA1ggm7E_2Aa-HlRyLh-SQ6iv/view?usp=drive_link"},
+                    {"label": "Foundation/Definition of Voice Agent", "url": "https://drive.google.com/file/d/1fagcp8I-DHpXs3y_OaT-78PyBhAhEq8o/view?usp=drive_link"},
+                    {"label": "Foundation/Core Processing Flow", "url": "https://drive.google.com/file/d/1bbD9Rl5eNNrTT8AEghS_qdCTMpYt4GQ9/view?usp=drive_link"},
+                    {"label": "Trustworthiness of Voice Agent", "url": "https://drive.google.com/file/d/1RTwIDde_2M3eBBffUqcvl9Fi1xA2ztxY/view?usp=drive_link"},
+                    {"label": "Voice Agent and the Improvisation Assignment I", "url": "https://drive.google.com/file/d/1beepa5y8184UCdLFTDgeMxAjQz-rSH2a/view?usp=drive_link"},
+                    {"label": "Voice Agent and the Improvisation Assignment II", "url": "https://drive.google.com/file/d/1jrV1xjQmWBPtMlveV5uUXdyDQJzCKQsM/view?usp=drive_link"},
                 ],
             },
             {
