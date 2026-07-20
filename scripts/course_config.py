@@ -242,7 +242,8 @@ weeks = [
                         ],
                     },
                     {"label": "Introduction to Flow Matching", "url": "https://www.youtube.com/watch?v=tlO5PQwHKV8"},
-                    {"label": "Efficient Text-to-Music Generation via Flow Matching with Bidirectional Mamba SSM"},
+                    {"label": "Introduction to Mamba State-Space Model", "url": "https://www.youtube.com/watch?v=-VvX-LAsslk"},
+                    {"label": "Efficient Text-to-Music Generation via Flow Matching with Bidirectional Mamba SSM", "url": "https://www.youtube.com/watch?v=khNHpprGKwo"},
                 ],
             },
             {
