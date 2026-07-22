@@ -336,7 +336,7 @@ project = {
     "title": "Final Project",
     "url": "https://drive.google.com/file/d/1ILRju3uoe4Rf_vzHJU2KE4lX8fJ_3gHE/view?usp=sharing",
     "milestones": [
-        {"label": "Project Proposal", "weight": "10%", "due": july_weekday(4, WEDNESDAY)},
+        {"label": "Project Proposal (submit your proposal pdf to Gradescope, no video needed)", "weight": "10%", "due": july_weekday(4, WEDNESDAY)},
         {"label": "Presentation", "weight": "15%", "due": f"{july_weekday(5, WEDNESDAY)} recorded + live Q&A session on {july_weekday(5, THURSDAY)} during Keren's office hours"},
         {"label": "Report", "weight": "15%", "due": optional_self_grade_due},
     ],
