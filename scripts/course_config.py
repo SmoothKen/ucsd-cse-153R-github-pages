@@ -265,7 +265,7 @@ weeks = [
 # ----------------assignments-----------------
 
 required_intro = "You are required to submit the following 6 programming assignments, each worth 10% of your grade. All due dates are for 11:59 PM Pacific Time."
-choice_intro = "For the remaining 40% of the grade, you can choose to complete 4 additional assignments or a final project. (Note: for these assignments, due to grade submission time constraints, grace day options will not be provided"
+choice_intro = "For the remaining 40% of the grade, you can choose to complete 4 additional assignments or a final project. (Note: for these assignments, due to grade submission time constraints, grace day options will not be provided. Late homework will not be accepted."
 
 ai_disclosure_policy = "For every assignment/project, disclose and cite any AI tools you used, with a brief description of how you used them. Failure to disclose AI-tool use, if detected by our software or staff, will be treated as a academic-integrity violation and may result in academic and/or administrative sanctions."
 
