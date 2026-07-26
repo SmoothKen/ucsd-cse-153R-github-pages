@@ -1,3 +1,3 @@
 nbclient
 ipykernel
-stable-audio-tools==0.0.19
+-e .
