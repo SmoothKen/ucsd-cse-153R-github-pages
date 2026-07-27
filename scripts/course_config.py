@@ -32,8 +32,8 @@ professor_office_hours_url = "https://ucsd.zoom.us/j/97315192509"
 
 ta = "Keren Shao"
 ta_email = "k5shao@ucsd.edu"
-ta_office_hours = "Zoom office hours: Thursdays 4 PM - 5 PM or by appointment"
-ta_office_hours_url = "https://ucsd.zoom.us/my/k5shao"
+ta_office_hours = "Zoom office hours: Thursdays 3 PM - 5 PM or by appointment"
+ta_office_hours_url = "https://ucsd.zoom.us/j/2149191906"
 
 
 tutor = "Hargen Zheng"
@@ -218,6 +218,14 @@ weeks = [
                         ],
                     },
                     {"label": "Listening Machines: From Music Information Dynamics to Voice and Multi-Agent Co-Performance"},
+
+                    
+                    {"label": "Opening", "url": "https://drive.google.com/file/d/1t1RIh6lXA1ggm7E_2Aa-HlRyLh-SQ6iv/view?usp=drive_link"},
+                    {"label": "Foundation/Definition of Voice Agent", "url": "https://drive.google.com/file/d/1fagcp8I-DHpXs3y_OaT-78PyBhAhEq8o/view?usp=drive_link"},
+                    {"label": "Foundation/Core Processing Pipeline", "url": "https://drive.google.com/file/d/1bbD9Rl5eNNrTT8AEghS_qdCTMpYt4GQ9/view?usp=drive_link"},
+                    {"label": "Trustworthiness of Voice Agent", "url": "https://drive.google.com/file/d/1RTwIDde_2M3eBBffUqcvl9Fi1xA2ztxY/view?usp=drive_link"},
+                    {"label": "Voice Agent and the Improvisation Assignment I", "url": "https://drive.google.com/file/d/1beepa5y8184UCdLFTDgeMxAjQz-rSH2a/view?usp=drive_link"},
+                    {"label": "Voice Agent and the Improvisation Assignment II", "url": "https://drive.google.com/file/d/1jrV1xjQmWBPtMlveV5uUXdyDQJzCKQsM/view?usp=drive_link"},
                 ],
             },
             {
@@ -234,7 +242,8 @@ weeks = [
                         ],
                     },
                     {"label": "Introduction to Flow Matching", "url": "https://www.youtube.com/watch?v=tlO5PQwHKV8"},
-                    {"label": "Efficient Text-to-Music Generation via Flow Matching with Bidirectional Mamba SSM"},
+                    {"label": "Introduction to Mamba State-Space Model", "url": "https://www.youtube.com/watch?v=-VvX-LAsslk"},
+                    {"label": "Efficient Text-to-Music Generation via Flow Matching with Bidirectional Mamba SSM", "url": "https://www.youtube.com/watch?v=khNHpprGKwo"},
                 ],
             },
             {
@@ -256,7 +265,9 @@ weeks = [
 # ----------------assignments-----------------
 
 required_intro = "You are required to submit the following 6 programming assignments, each worth 10% of your grade. All due dates are for 11:59 PM Pacific Time."
-choice_intro = "For the remaining 40% of the grade, you can choose to complete 4 additional assignments or a final project."
+choice_intro = "For the remaining 40% of the grade, you can choose to complete 4 additional assignments or a final project. (Note: for these assignments, due to grade submission time constraints, grace day options will not be provided. Late homework will not be accepted."
+
+ai_disclosure_policy = "For every assignment/project, disclose and cite any AI tools you used, with a brief description of how you used them. Failure to disclose AI-tool use, if detected by our software or staff, will be treated as a academic-integrity violation and may result in academic and/or administrative sanctions."
 
 required_assignments = [
     {"number": 0, "title": "Introduction to Music Representation", "url": "https://github.com/SmoothKen/ucsd-cse-153R-github-pages/blob/master/homework/Introduction%20to%20Music%20Representation.ipynb"},
@@ -325,7 +336,7 @@ project = {
     "title": "Final Project",
     "url": "https://drive.google.com/file/d/1ILRju3uoe4Rf_vzHJU2KE4lX8fJ_3gHE/view?usp=sharing",
     "milestones": [
-        {"label": "Project Proposal", "weight": "10%", "due": july_weekday(4, WEDNESDAY)},
+        {"label": "Project Proposal (submit your proposal pdf to Gradescope, no video needed)", "weight": "10%", "due": july_weekday(4, WEDNESDAY)},
         {"label": "Presentation", "weight": "15%", "due": f"{july_weekday(5, WEDNESDAY)} recorded + live Q&A session on {july_weekday(5, THURSDAY)} during Keren's office hours"},
         {"label": "Report", "weight": "15%", "due": optional_self_grade_due},
     ],
@@ -390,6 +401,7 @@ course_data = {
     "assignments": {
         "required_intro": required_intro,
         "choice_intro": choice_intro,
+        "ai_disclosure_policy": ai_disclosure_policy,
         "required": required_assignments,
         "optional_due": optional_due,
         "optional_self_grade_due": optional_self_grade_due,

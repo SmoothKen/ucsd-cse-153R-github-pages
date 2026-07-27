@@ -213,11 +213,15 @@ def assignments_page():
     optional = assignment_rows([{**a, "due": assn["optional_due"], "self_grade_due": assn["optional_self_grade_due"]} for a in assn["optional"]])
     milestones = "\n".join(f'<li><strong>{esc(m["label"])}</strong> ({esc(m["weight"])}) due {esc(m["due"])}</li>' for m in assn["project"]["milestones"])
     self_grading = "\n".join(f'<li>{esc(x)}</li>' for x in assn["self_grading"]["instructions"])
+    ai_policy = assn["ai_disclosure_policy"]
+
     body = f'''
         <section class="page-title">
             <p class="eyebrow">Assignments</p>
             <h1>Homework and final project</h1>
-            <p class="lede">Programming assignments, optional assignment track, final project track, and self-grading instructions.</p>
+            <p class="lede">Programming assignments, optional assignment track, final project track, and self-grading instructions. <b> Note: {esc(ai_policy)}</b></p>
+
+        </section>
         </section>
 
         <section>
