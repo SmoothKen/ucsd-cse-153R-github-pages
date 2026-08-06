@@ -33,7 +33,7 @@ professor_office_hours_url = "https://ucsd.zoom.us/j/97315192509"
 ta = "Keren Shao"
 ta_email = "k5shao@ucsd.edu"
 ta_office_hours = "Zoom office hours: Thursdays 3 PM - 5 PM or by appointment"
-ta_office_hours_url = "https://ucsd.zoom.us/j/2149191906"
+ta_office_hours_url = "https://ucsd.zoom.us/my/k5shao"
 
 
 tutor = "Hargen Zheng"
